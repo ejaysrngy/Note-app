@@ -1,8 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import {Header, Footer} from "./App";
+import Note from "./Note";
 
 ReactDOM.render(
-  
+  <div>
+      <Header />
+      <div>
+          <Note />
+      </div>
+      <Footer />
+  </div>
+  , document.getElementById("root")
 );
 
 //1. Create a new React app.
