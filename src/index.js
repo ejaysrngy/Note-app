@@ -2,12 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import {Header, Footer} from "./App";
 import Note from "./Note";
+import notes from "./notes";
 
 ReactDOM.render(
   <div>
       <Header />
       <div>
-          <Note />
+          {notes.map(Note)}
       </div>
       <Footer />
   </div>
