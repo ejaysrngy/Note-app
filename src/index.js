@@ -7,7 +7,7 @@ import notes from "./notes";
 ReactDOM.render(
   <div>
       <Header />
-      <div className="container-flex span12 col-lg col-md-4">
+      <div className="note-container container-flex span12 col-lg col-md">
           {notes.map(Note)}
       </div>
       <Footer />
