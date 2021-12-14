@@ -9,6 +9,8 @@ function Header() {
     </div>
 )};
 
+
+
 function Footer() {
     return (
         <div>
@@ -18,5 +20,7 @@ function Footer() {
         </div>
     )
 }
+
+
 
 export {Header, Footer};
