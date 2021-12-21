@@ -58,3 +58,13 @@ footer p {
 .note-container {
   margin: 1% auto;
 }
+
+.note .icons{
+  font-size: 15px;
+  text-align: right;
+}
+
+.note .icons i {
+  color: dimgray;
+  padding: 10px;
+}
