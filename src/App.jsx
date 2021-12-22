@@ -1,4 +1,6 @@
 import React from "react";
+import Note from "./Note";
+import notes from "./notes";
 
 function Header() {
     return (
@@ -9,7 +11,18 @@ function Header() {
     </div>
 )};
 
-
+function NoteBody(props) {
+    return (
+        <div className="note-container container-flex span12 col-lg col-md">
+          {notes.map((props) => 
+          <Note
+            key={props.key}
+            title={props.title}
+            content={props.content}
+            /> )}
+      </div>
+    )
+}
 
 function Footer() {
     return (
@@ -23,4 +36,4 @@ function Footer() {
 
 
 
-export {Header, Footer};
+export {Header, NoteBody, Footer};
