@@ -6,21 +6,29 @@ function Header() {
     return (
     <div> 
         <header>
-            <h1> Keeper </h1>
+            <h1> Notes </h1>
         </header>
     </div>
 )};
 
-function NoteBody(props) {
+function NoteBody() {
     return (
-        <div className="note-container container-flex span12 col-lg col-md">
-          {notes.map((props) => 
-          <Note
-            key={props.key}
-            title={props.title}
-            content={props.content}
-            /> )}
-      </div>
+        <div className="note-body-container">
+            <div className="add-note-container container-flex">
+                <div className="note">
+                    <h1> Insert Note here </h1>
+                    <p> Insert Note here </p>
+                </div>
+            </div>
+            <div className="note-container container-flex span12 col-lg col-md">
+            {notes.map((props, index) => 
+            <Note
+                key={index}
+                title={props.title}
+                content={props.content}
+                /> )}
+            </div>
+        </div>
     )
 }
 
