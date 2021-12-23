@@ -12,13 +12,19 @@ function Header() {
 )};
 
 function NoteBody() {
-    const [addTitle, setAddTitle] = React.useState("Title");
-    const [addNote, setAddNote] = React.useState("Notes here");
+    const [noteArray, setNoteArray] = React.useState([]);
 
+    function addNote(note){
+        setNoteArray(prevArray => {
+            return [...prevArray, note]}
+        )
+    }
 
     return (
         <div>
-            <CreateNote />
+            <CreateNote 
+                onAdd={addNote}
+            />
             <div className="note-container container-flex span12 col-lg col-md">
                 {notes.map((props, index) => 
                 <Note
