@@ -1,6 +1,8 @@
 import React from "react";
 import Note from "./Note";
 import notes from "./notes";
+import CreateNote from "./CreateNote";
+
 
 function Header() {
     return (
@@ -16,15 +18,7 @@ function NoteBody() {
 
     return (
         <div>
-            <div className="note-header-container col-lg">
-                <div className="add-note-container container-flex">
-                    <div className="note">
-                        <h1> {addTitle} </h1>
-                        <p> {addNote} </p>
-                        <button> + </button>
-                    </div>
-                </div>
-            </div>
+            <CreateNote />
             <div className="note-container container-flex span12 col-lg col-md">
                 {notes.map((props, index) => 
                 <Note

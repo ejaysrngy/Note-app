@@ -58,13 +58,31 @@ footer p {
 
 .note-header-container {
   width: 90%;
+  text-align: center;
 }
 
 .add-note-container {
-  top: 50%;
-  left: 45%;
+  text-align: left;
   display: inline-block;
   position: relative;
+}
+
+.add-note-container input[name="createNote"] {
+  border: none;
+  font-size: 1.25em;
+  width: 95%;
+}
+
+.add-note-container input:focus, textarea:focus {
+  outline: none;
+}
+
+.add-note-container textarea {
+  border: none;
+  width: 95%;
+  margin-top: 5px;
+  resize: none;
+  overflow: hidden;
 }
 
 .add-note-container h1, p, i {
@@ -76,7 +94,7 @@ footer p {
   font-size: 1.5em;
   position: absolute;
   left: 75%;
-  top: 65%;
+  top: 75%;
   /* display: inline; */
   text-align: center;
   border: none;
