@@ -1,6 +1,5 @@
 import React from "react";
 import Note from "./Note";
-import notes from "./notes";
 import CreateNote from "./CreateNote";
 
 
@@ -20,6 +19,10 @@ function NoteBody() {
         )
     }
 
+    function deleteNote(event){
+        console.log(event.target.id)
+    }
+
     return (
         <div>
             <CreateNote 
@@ -29,8 +32,10 @@ function NoteBody() {
                 {noteArray.map((props, index) => 
                 <Note
                     key={index}
+                    id={index}
                     title={props.title}
                     content={props.content}
+                    deleteItem={deleteNote}
                     /> )}
             </div>
         </div>

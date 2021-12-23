@@ -23,6 +23,7 @@ function CreateNote(props) {
     //     )
     // }
         //
+        
     function handleChangeTitle(event){ 
         setTitle(event.target.value)
     }
