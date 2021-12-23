@@ -4,29 +4,34 @@ import notes from "./notes";
 
 function Header() {
     return (
-    <div> 
         <header>
             <h1> Notes </h1>
         </header>
-    </div>
 )};
 
 function NoteBody() {
+    const [addTitle, setAddTitle] = React.useState("Title");
+    const [addNote, setAddNote] = React.useState("Notes here");
+
+
     return (
-        <div className="note-body-container">
-            <div className="add-note-container container-flex">
-                <div className="note">
-                    <h1> Insert Note here </h1>
-                    <p> Insert Note here </p>
+        <div>
+            <div className="note-header-container col-lg">
+                <div className="add-note-container container-flex">
+                    <div className="note">
+                        <h1> {addTitle} </h1>
+                        <p> {addNote} </p>
+                        <button> + </button>
+                    </div>
                 </div>
             </div>
             <div className="note-container container-flex span12 col-lg col-md">
-            {notes.map((props, index) => 
-            <Note
-                key={index}
-                title={props.title}
-                content={props.content}
-                /> )}
+                {notes.map((props, index) => 
+                <Note
+                    key={index}
+                    title={props.title}
+                    content={props.content}
+                    /> )}
             </div>
         </div>
     )
