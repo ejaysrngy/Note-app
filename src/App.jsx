@@ -26,7 +26,7 @@ function NoteBody() {
                 onAdd={addNote}
             />
             <div className="note-container container-flex span12 col-lg col-md">
-                {notes.map((props, index) => 
+                {noteArray.map((props, index) => 
                 <Note
                     key={index}
                     title={props.title}
