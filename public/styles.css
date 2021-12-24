@@ -79,19 +79,18 @@ header h1 {
 }
 
 .add-note-container button {
-  color: white;
-  font-size: 1.5em;
   position: absolute;
-  left: 75%;
-  top: 75%;
-  /* display: inline; */
-  text-align: center;
+  right: 25px;
+  bottom: -1px;
+  background: #f5ba13;
+  color: #fff;
   border: none;
-  padding: 1px;
-  width: 35px;
-  border-radius: 90px;
-  background-color: #f5ba13;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  outline: none;
 }
 
 .note-container {

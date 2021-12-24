@@ -1,30 +1,16 @@
 import React from "react";
 import Textarea from "react-expanding-textarea";
 import Fab from '@mui/material/Fab';
-import AddIcon from '@mui/icons-material/Add';
-
+import AddIcon from '@mui/material/node/internal/svg-icons/Add';
+import Zoom from "@mui/material/Zoom";
 
 
 function CreateNote(props) {
-    // const [note, setNote] = React.useState({
-    //     title: "",
-    //     content: ""
-    // });
 
     const [newTitle, setTitle] = React.useState("");
     const [newContent, setContent] = React.useState("");
+    const [isExpanded, setExpanded] = React.useState(false);
 
-        //
-    // function handleChange(event){
-    //     const {name, value} = event.target;
-    //     setNote(prevNote => {
-    //         return {
-    //         ...prevNote,
-    //         [name]: value
-    //     }}
-    //     )
-    // }
-        //
         
     function handleChangeTitle(event){ 
         setTitle(event.target.value)
@@ -43,29 +29,41 @@ function CreateNote(props) {
         event.preventDefault();
     }
 
+    function expand() {
+        setExpanded(true);
+      }
+
+
     return (
         <div className="note-header-container col-lg">
             <div className="add-note-container container-flex">
                 <form className="note" autoComplete="off">
-                    <input onChange={handleChangeTitle} value={newTitle} name="createNote" placeholder="Title" />
+                    {isExpanded && (
+                        <input onChange={handleChangeTitle} value={newTitle} name="createNote" placeholder="Title" />
+                    )}
+                    
                     <Textarea 
                     value={newContent}
+                    onClick={expand}
                     onChange={handleChangeContent}
                     name="textArea"
                     id="newTextArea"
                     placeholder="Insert note"
-                    rows="3"
+                    rows={isExpanded ? 3: 1}
                     />
-                    <button onClick={submitNewNote}> 
-                        <Fab color="primary" aria-label="add">
-                        <AddIcon />
+                    <Zoom in={isExpanded}>
+                        <Fab onClick={submitNewNote}>
+                            <AddIcon />
                         </Fab>
-                    </button>
+                    </Zoom>
                 </form>
                 
             </div>
         </div>
     )
 }
+
+
+
 
 export default CreateNote;
