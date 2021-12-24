@@ -19,8 +19,12 @@ function NoteBody() {
         )
     }
 
-    function deleteNote(event){
-        console.log(event.target.id)
+    function deleteNote(id){
+        setNoteArray(
+            noteArray.filter((item, index) => {
+                return index !== id;
+            }
+        ))
     }
 
     return (
@@ -29,29 +33,20 @@ function NoteBody() {
                 onAdd={addNote}
             />
             <div className="note-container container-flex span12 col-lg col-md">
-                {noteArray.map((props, index) => 
-                <Note
+                {noteArray.map((props, index) => {
+                    return   <Note
                     key={index}
                     id={index}
                     title={props.title}
                     content={props.content}
-                    deleteItem={deleteNote}
-                    /> )}
+                    onDelete={deleteNote}
+                    /> })}
             </div>
         </div>
     )
 }
 
-function Footer() {
-    return (
-        <div>
-            <footer>
-                <p> Final Project: Udemy</p>
-            </footer>
-        </div>
-    )
-}
 
 
 
-export {Header, NoteBody, Footer};
+export {Header, NoteBody};

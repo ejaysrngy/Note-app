@@ -3,6 +3,7 @@ import Textarea from "react-expanding-textarea";
 
 
 
+
 function CreateNote(props) {
     // const [note, setNote] = React.useState({
     //     title: "",
@@ -44,7 +45,7 @@ function CreateNote(props) {
     return (
         <div className="note-header-container col-lg">
             <div className="add-note-container container-flex">
-                <form className="note">
+                <form className="note" autoComplete="off">
                     <input onChange={handleChangeTitle} value={newTitle} name="createNote" placeholder="Title" />
                     <Textarea 
                     value={newContent}

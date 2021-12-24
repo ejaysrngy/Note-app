@@ -24,18 +24,6 @@ header h1 {
   font-weight: 200;
 }
 
-footer {
-  position: absolute;
-  text-align: center;
-  bottom: 0;
-  width: 100%;
-  height: 2.5rem;
-}
-
-footer p {
-  color: rgb(8, 4, 4);
-}
-
 .note {
   background: #fff;
   border-radius: 7px;
@@ -44,6 +32,7 @@ footer p {
   width: 240px;
   margin: 16px;
   float: left;
+  transition: 1s ease-in;
 }
 .note h1 {
   font-size: 1.1em;
@@ -114,7 +103,25 @@ footer p {
   text-align: right;
 }
 
-.note .icons i {
-  color: dimgray;
+.icons button {
+  border: none;
+  background-color: white;
   padding: 10px;
+}
+
+.icons i:hover {
+  color: black;
+  transition: .25s ease;
+}
+
+.icons button:active , button:focus, button:visited {
+  outline: none !important;
+  border: none !important;        
+  text-decoration: none !important;
+  box-shadow: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+  user-select: none;
 }
