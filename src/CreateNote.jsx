@@ -1,6 +1,7 @@
 import React from "react";
 import Textarea from "react-expanding-textarea";
-
+import Fab from '@mui/material/Fab';
+import AddIcon from '@mui/icons-material/Add';
 
 
 
@@ -55,7 +56,11 @@ function CreateNote(props) {
                     placeholder="Insert note"
                     rows="3"
                     />
-                    <button onClick={submitNewNote}> + </button>
+                    <button onClick={submitNewNote}> 
+                        <Fab color="primary" aria-label="add">
+                        <AddIcon />
+                        </Fab>
+                    </button>
                 </form>
                 
             </div>
