@@ -1,7 +1,7 @@
 import React from "react";
 import Note from "./Note";
 import CreateNote from "./CreateNote";
-
+import {motion, AnimatePresence} from "framer-motion/dist/es/index";
 
 function Header() {
     return (
